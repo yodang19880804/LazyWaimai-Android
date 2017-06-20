@@ -6,10 +6,12 @@ import android.widget.Toast;
 
 import com.cheikh.lazywaimai.context.AppConfig;
 
+// Toast工具类
 public final class ToastUtil {
 
     private static Toast sToast;
 
+    // 私有化构造函数
     private ToastUtil() {
     }
 

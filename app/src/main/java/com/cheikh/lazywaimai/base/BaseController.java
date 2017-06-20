@@ -1,14 +1,16 @@
 package com.cheikh.lazywaimai.base;
 
 import android.util.Log;
+
+import com.cheikh.lazywaimai.context.AppConfig;
+import com.cheikh.lazywaimai.model.bean.ResponseError;
+import com.cheikh.lazywaimai.ui.Display;
 import com.google.common.base.Preconditions;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
-import com.cheikh.lazywaimai.context.AppConfig;
-import com.cheikh.lazywaimai.model.bean.ResponseError;
-import com.cheikh.lazywaimai.ui.Display;
 
 /**
  * author: cheikh.wang on 17/1/5
@@ -30,7 +32,7 @@ public abstract class BaseController<U extends BaseController.Ui<UC>, UC> {
     public final void init() {
         Preconditions.checkState(!mInited, "Already inited");
         onInited();
-        mInited = true;
+        mInited = true; // 表明已经初始化过了
     }
 
     public final void suspend() {
